@@ -1,0 +1,21 @@
+package pageObjectsHomework;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class CartPage {
+    private final WebDriver driver;
+
+    public CartPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    private final By checkoutButton = By.id("checkout");
+
+    public void checkoutButtonClick() {
+        driver.findElement(checkoutButton).click();
+    }
+}
+
